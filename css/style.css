@@ -67,12 +67,14 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     /* background-color: red; */
+    text-align: center;
 }
 
 .heading-primary {
     color: #fff;
     /* text-transform: uppercase; */
-    /*backface-visibility: hidden;  Untuk menghilangkan bug animasi dari css */
+    backface-visibility: hidden; /* Untuk menghilangkan bug animasi dari css*/
+    margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -83,7 +85,7 @@ body {
 
     /*start using animation*/
     animation-name: moveInLeft;     /* animation-name berfungsi untuk menamakan animasi yang akan kita buat dengan keyframe */
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-timing-function: ease-out;       /* animation timing berfungsi untuk mengatur cepat atau lambatnya animasi tersebut berdasarkan dari properti yang di tambahkan "ease-out" "ease-in" */
 }
 
@@ -94,22 +96,22 @@ body {
     letter-spacing: 17.4px;
 
     /*Start using animation*/
-    animation: moveInRight 1s ease-out;  /* Contoh di samping merupakan cara simple dalam penggunaan css untuk animasi.  */
+    animation: moveInRight 2s ease-out;  /* Contoh di samping merupakan cara simple dalam penggunaan css untuk animasi.  */
 }
 
 @keyframes moveInLeft {
     0% {
         opacity: 0;  /* fungsi opacity untuk mengatur tingakat keredupan suatu objek */
-        transform: translateX(-100px) rotate(0deg);  /* translateX untuk mengatur letak titik X, Rotate berfungsi untuk merotasikan suatu objek */
+        transform: translateX(-100px) /*rotate(0deg)*/;  /* translateX untuk mengatur letak titik X, Rotate berfungsi untuk merotasikan suatu objek */
     }
 
-    50% {
-        transform: translateX(10px) rotate(180deg);
+    80% {
+        transform: translateX(10px) /*rotate(180deg)*/;
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0) rotate(360deg);
+        transform: translate(0) /*rotate(360deg)*/;
     }
 }
 
@@ -127,4 +129,33 @@ body {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    /* color: red; */
+    /* background-color: black; */
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0,.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0,.2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+
 }
